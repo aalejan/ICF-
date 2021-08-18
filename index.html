@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>JS Problems</title>
+
 </head>
 <body>
 
@@ -17,8 +18,8 @@
  <table style="width:30%">
   <tr>
     <th> 
-      <button type="button">Copy</button> 
-      <button type="button">Paste</button>
+      <button data-copy-button1 type="button">Copy</button> 
+      <button data-paste-button1 type="button">Paste</button>
     </th>
     <th>
       <button type="button">Copy</button> 
@@ -27,10 +28,10 @@
   </tr>
   <tr>
     <td>
-      <input type="text">
+      <input data-input1a type="text">
     </td>
     <td>
-      <input type="text">
+      <input data-input1b type="text">
     </td>
   </tr>
   <tr>
@@ -63,6 +64,11 @@
 
 <script>
 // WRITE YOUR JAVASCRIPT CODE HERE
+//TASK 1 create compy and paste feature
+const copyBtn1 = document.querySelector('[data-copy-button1]')
+const pasteBtn1 = document.querySelector('[data-paste-button1]')
+const input1a = document.querySelector('[data-input1a]')
+const input1b = document.querySelector('[data-input1b]')
 
 </script>
 
