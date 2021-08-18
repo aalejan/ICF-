@@ -23,7 +23,7 @@
     </th>
     <th>
       <button data-copy-button2 type="button">Copy</button> 
-      <button data-paste-button1 type="button">Paste</button>
+      <button data-paste-button2 type="button">Paste</button>
     </th>
   </tr>
   <tr>
@@ -80,10 +80,10 @@ let column2Inputs = []
 copyBtn1.addEventListener('click', () =>  copy(input1a, input1b, column1Inputs))
 copyBtn2.addEventListener('click', () => copy(input2a, input2b, column2Inputs))
 pasteBtn1.addEventListener('click', () => paste(column1Inputs, input2a, input2b))
-
+pasteBtn2.addEventListener('click', () => paste(column2Inputs, input1a, input1b))
 
 function paste(columnInputs, input1, input2){
-  if(column1Inputs[0] && columnInputs[1]){
+  if(columnInputs[0] && columnInputs[1]){
     input1.value = columnInputs[0]
     input2.value = columnInputs[1]
     console.log('Text has been pasted')
