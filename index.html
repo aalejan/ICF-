@@ -31,12 +31,12 @@
       <input data-input1a type="text">
     </td>
     <td>
-      <input data-input1b type="text">
+      <input  type="text">
     </td>
   </tr>
   <tr>
     <td>
-      <input type="text">
+      <input data-input1b type="text">
     </td>
     <td>
       <input type="text">
@@ -75,8 +75,10 @@ let column1Inputs = []
 copyBtn1.addEventListener('click', () => {
   let input1 = input1a.value;
   let input2 = input1b.value;
+  
+  column1Inputs = [input1, input2]
 
-  console.log([input1 , input2])
+  console.log(column1Inputs)
 })
 
 
