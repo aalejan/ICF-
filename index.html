@@ -77,28 +77,18 @@ const input2b = document.querySelector('[data-input2b]')
 let column1Inputs = []
 let column2Inputs = []
 
-// copyBtn1.addEventListener('click', () => {
-//   const input1 = input1a.value;
-//   const input2 = input1b.value;
-  
-//   column1Inputs = [input1, input2]
-
-//   input1a.value = ''
-//   input1b.value = ''
-//   console.log(column1Inputs)
-// })
-
 copyBtn1.addEventListener('click', () =>  copy(input1a, input1b, column1Inputs))
 copyBtn2.addEventListener('click', () => copy(input2a, input2b, column2Inputs))
+pasteBtn1.addEventListener('click', () => paste(column1Inputs, input2a, input2b))
 
-pasteBtn1.addEventListener('click', () => {
-  if(column1Inputs[0] && column1Inputs[1]){
-     input2a.value = column1Inputs[0]
-     input2b.value = column1Inputs[1]
-     
-  }else return console.log(column1Inputs);
-  
-})
+
+function paste(columnInputs, input1, input2){
+  if(column1Inputs[0] && columnInputs[1]){
+    input1.value = columnInputs[0]
+    input2.value = columnInputs[1]
+    console.log('Text has been pasted')
+  }else return console.log('Text must be copied')
+}
 
 function copy(input1, input2, columnInputs){
 
@@ -113,7 +103,6 @@ function copy(input1, input2, columnInputs){
   input1.value = ''
   input2.value = ''
   console.log(columnInputs)
-
 }
 
 </script>
