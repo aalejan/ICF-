@@ -22,8 +22,8 @@
       <button data-paste-button1 type="button">Paste</button>
     </th>
     <th>
-      <button type="button">Copy</button> 
-      <button type="button">Paste</button>
+      <button data-copy-button2 type="button">Copy</button> 
+      <button data-paste-button1 type="button">Paste</button>
     </th>
   </tr>
   <tr>
@@ -67,6 +67,8 @@
 //TASK 1 create compy and paste feature
 const copyBtn1 = document.querySelector('[data-copy-button1]')
 const pasteBtn1 = document.querySelector('[data-paste-button1]')
+const copyBtn2 = document.querySelector('[data-copy-button2]')
+const pasteBtn2 = document.querySelector('[data-paste-button2]')
 const input1a = document.querySelector('[data-input1a]')
 const input1b = document.querySelector('[data-input1b]')
 const input2a = document.querySelector('[data-input2a]')
@@ -87,19 +89,26 @@ let column2Inputs = []
 // })
 
 copyBtn1.addEventListener('click', () =>  copy(input1a, input1b, column1Inputs))
+copyBtn2.addEventListener('click', () => copy(input2a, input2b, column2Inputs))
 
 pasteBtn1.addEventListener('click', () => {
   if(column1Inputs[0] && column1Inputs[1]){
      input2a.value = column1Inputs[0]
      input2b.value = column1Inputs[1]
-  }else return;
+     
+  }else return console.log(column1Inputs);
+  
 })
 
 function copy(input1, input2, columnInputs){
+
+  if(input1.value === '' && input2.value === '') {  console.log('Inputs cannot be empty')}else console.log('Inputs have been copied')
+
   const inputA = input1.value
   const inputB = input2.value
 
-  columnInputs = [inputA, inputB]
+  columnInputs[0] = inputA
+  columnInputs[1] = inputB
 
   input1.value = ''
   input2.value = ''
