@@ -31,7 +31,7 @@
       <input data-input1a type="text">
     </td>
     <td>
-      <input  type="text">
+      <input data-input2a  type="text">
     </td>
   </tr>
   <tr>
@@ -39,7 +39,7 @@
       <input data-input1b type="text">
     </td>
     <td>
-      <input type="text">
+      <input data-input2b type="text">
     </td>
   </tr>
 </table> 
@@ -69,16 +69,28 @@ const copyBtn1 = document.querySelector('[data-copy-button1]')
 const pasteBtn1 = document.querySelector('[data-paste-button1]')
 const input1a = document.querySelector('[data-input1a]')
 const input1b = document.querySelector('[data-input1b]')
+const input2a = document.querySelector('[data-input2a]')
+const input2b = document.querySelector('[data-input2b]')
 
 let column1Inputs = []
+let column2Inputs = []
 
 copyBtn1.addEventListener('click', () => {
-  let input1 = input1a.value;
-  let input2 = input1b.value;
+  const input1 = input1a.value;
+  const input2 = input1b.value;
   
   column1Inputs = [input1, input2]
 
+  input1a.value = ''
+  input1b.value = ''
   console.log(column1Inputs)
+})
+
+pasteBtn1.addEventListener('click', () => {
+  if(column1Inputs[0] && column1Inputs[1]){
+     input2a.value = column1Inputs[0]
+     input2b.value = column1Inputs[1]
+  }else return;
 })
 
 
