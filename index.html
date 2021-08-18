@@ -75,16 +75,18 @@ const input2b = document.querySelector('[data-input2b]')
 let column1Inputs = []
 let column2Inputs = []
 
-copyBtn1.addEventListener('click', () => {
-  const input1 = input1a.value;
-  const input2 = input1b.value;
+// copyBtn1.addEventListener('click', () => {
+//   const input1 = input1a.value;
+//   const input2 = input1b.value;
   
-  column1Inputs = [input1, input2]
+//   column1Inputs = [input1, input2]
 
-  input1a.value = ''
-  input1b.value = ''
-  console.log(column1Inputs)
-})
+//   input1a.value = ''
+//   input1b.value = ''
+//   console.log(column1Inputs)
+// })
+
+copyBtn1.addEventListener('click', () =>  copy(input1a, input1b, column1Inputs))
 
 pasteBtn1.addEventListener('click', () => {
   if(column1Inputs[0] && column1Inputs[1]){
@@ -93,6 +95,17 @@ pasteBtn1.addEventListener('click', () => {
   }else return;
 })
 
+function copy(input1, input2, columnInputs){
+  const inputA = input1.value
+  const inputB = input2.value
+
+  columnInputs = [inputA, inputB]
+
+  input1.value = ''
+  input2.value = ''
+  console.log(columnInputs)
+
+}
 
 </script>
 
