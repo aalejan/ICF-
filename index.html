@@ -65,6 +65,7 @@
 <script>
 // WRITE YOUR JAVASCRIPT CODE HERE
 //TASK 1 create compy and paste feature
+//select neccessary elements to be accessed in JS
 const copyBtn1 = document.querySelector('[data-copy-button1]')
 const pasteBtn1 = document.querySelector('[data-paste-button1]')
 const copyBtn2 = document.querySelector('[data-copy-button2]')
@@ -82,29 +83,38 @@ pasteBtn1.addEventListener('click', () => paste(column1Inputs, input2a, input2b)
 pasteBtn2.addEventListener('click', () => paste(column2Inputs, input1a, input1b))
 
 function paste(columnInputs, input1, input2){
+  //function that checks if column inputs were copied and then pastes them on the opposite column and row
   if(columnInputs[0] && columnInputs[1]){
     input1.value = columnInputs[0]
     input2.value = columnInputs[1]
     console.log('Text has been pasted')
   }else return console.log('Text must be copied')
+
 }
 
 function copy(input1, input2, columnInputs){
+  //function that takes two inputs and one column as its params. This function copies the inputs in the column passed in.
 
+  //alert if inputs have been copied or not copied
   if(input1.value === '' && input2.value === '') {  console.log('Inputs cannot be empty')}else console.log('Inputs have been copied')
 
+  //get input values of each input in column
   const inputA = input1.value
   const inputB = input2.value
 
+  //populate column array with inputs
   columnInputs[0] = inputA
   columnInputs[1] = inputB
 
   input1.value = ''
   input2.value = ''
   console.log(columnInputs)
+  
 }
 //////////////////////////////////////////////////////////////////////////////////
 //TASK 2 Create a feature that displays an error message if the input is not a number when the validate button is clicked.
+
+//select neccessary elements to be accessed in JS
 const inputValidate = document.querySelector('[data-validate-input]')
 const validateBtn = document.querySelector('[data-validate-button]')
 let errorMessage = document.createElement('div')
@@ -112,42 +122,61 @@ validateBtn.after(errorMessage)
 validateBtn.addEventListener('click', () => {validate()})
 
 function validate(){
-  const input = inputValidate.value;
- 
+//function that returns an error message to user if anything other than a number is validated
+
+//get user input
+  const input = inputValidate.value
+
+  console.log(input)
   if(!input) {
      return errorMessage.innerText = 'Please enter an input'  
     }
   if(isNaN(input)){
     return errorMessage.innerText = 'The input must be a number'
   }else return errorMessage.innerText = 'Input has been validated'
+
+
 }
 //////////////////////////////////////////////////////////////////////////////
 //TASK 3 Create a feature that checks the checkbox when anything is entered in the text box.
+
+//select neccessary elements to be accessed in JS
 const checkboxText = document.querySelector('[data-checkbox-text]')
 const checkbox = document.querySelector('[data-checkbox]')
 
 checkboxText.addEventListener('change', checkCompleted)
 
 function checkCompleted(){
+//function that checks the ckeckbox if input is changed with new entered text
+
   if(!checkbox.checked){
+    
     return checkbox.checked = true;
-  }else return checkbox.checked = false;
+  }else  return checkbox.checked = false;
 }
 ////////////////////////////////////////////////////////////////////////////////
 //TASK 4 Create a feature that creates 4 buttons and places them anywhere on the page when the create elements button is clicked ( Feel free to be creative ).
+
+//select neccessary elements to be accessed in JS
 const buttonGenerator = document.querySelector('[data-button-generator]')
 var winWidth = window.innerWidth;
 var winHeight = window.innerHeight;
 
+//
 buttonGenerator.addEventListener('click', createButtons)
 
+
 function createButtons(){
+//Function that creates four buttons and randomly generates certain css style properties unique to each button
 
   let randomButtons = []
+
+  //creates four button elements and pushes them into an array
   for(let i = 0; i <= 3; i++){
     randomButtons.push(document.createElement('button'))
   }
 
+  //loop through array and randomly generate style properties for each button
  randomButtons.forEach((button) => {
    console.log(button)
     let top = getRandomNumber(0, winHeight)
@@ -166,23 +195,21 @@ function createButtons(){
     button.style.left =  left +'px';
     document.body.appendChild(button)
  })
-  
-  randomButtons = []
-  console.log(randomButtons)
-  console.log(random_bg_color())
+ 
 }
 
 function getRandomNumber(min, max) { 
+  //function that randomly generates a number between the min and max that is passed in
     return Math.random() * (max - min) + min;
   }
+  
   function random_bg_color() {
-    var x = Math.floor(Math.random() * 256);
-    var y = Math.floor(Math.random() * 256);
-    var z = Math.floor(Math.random() * 256);
-    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
- console.log(bgColor);
- return bgColor
-    
+    //Function that randomly generates rgb values
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+  return bgColor
     }
 
 </script>
