@@ -145,24 +145,26 @@ function createButtons(){
 
   let randomButtons = []
   for(let i = 0; i <= 3; i++){
-    // document.createElement('button').classList.add('randomButton');
     randomButtons.push(document.createElement('button'))
   }
-  
- 
 
  randomButtons.forEach((button) => {
    console.log(button)
     let top = getRandomNumber(0, winHeight)
     let left = getRandomNumber(0, winWidth)
-  button.style.height = '70px'
-  button.style.width = '50px'
+    let height = getRandomNumber(5, 200)
+  let width = getRandomNumber(10, 200)
+
+  button.style.height = height + 'px'
+  button.style.width = width + 'px'
     button.style.position = 'absolute';
     button.style.top = top +'px';
     button.style.left =  left +'px';
     button.style.backgroundColor = 'red';
     document.body.appendChild(button)
  })
+  
+  randomButtons = []
   console.log(randomButtons)
 }
 
