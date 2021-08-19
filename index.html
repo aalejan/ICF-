@@ -57,7 +57,7 @@
 <hr>
 
 <h1>#4</h1>
-<button type="button">Create Elements</button>
+<button data-button-generator type="button">Create Elements</button>
 
 
 </body>
@@ -129,12 +129,13 @@ const checkbox = document.querySelector('[data-checkbox]')
 checkboxText.addEventListener('change', checkCompleted)
 
 function checkCompleted(){
-
   if(!checkbox.checked){
     return checkbox.checked = true;
   }else return checkbox.checked = false;
-  
 }
+////////////////////////////////////////////////////////////////////////////////
+//TASK 4 Create a feature that creates 4 buttons and places them anywhere on the page when the create elements button is clicked ( Feel free to be creative ).
+const buttonGenerator = document.querySelector('[data-button-generator]')
 
 </script>
 
