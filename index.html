@@ -137,6 +137,17 @@ function checkCompleted(){
 //TASK 4 Create a feature that creates 4 buttons and places them anywhere on the page when the create elements button is clicked ( Feel free to be creative ).
 const buttonGenerator = document.querySelector('[data-button-generator]')
 
+buttonGenerator.addEventListener('click', createButtons)
+
+function createButtons(){
+let buttons = []
+
+  for(let i = 0; i <= 3; i++){
+    buttons.push(document.createElement('button'));
+   
+  }
+
+}
 </script>
 
 </html> 
