@@ -142,21 +142,33 @@ var winHeight = window.innerHeight;
 buttonGenerator.addEventListener('click', createButtons)
 
 function createButtons(){
-let buttons = []
 
+  let randomButtons = []
   for(let i = 0; i <= 3; i++){
-    buttons.push(document.createElement('button'));
+    // document.createElement('button').classList.add('randomButton');
+    randomButtons.push(document.createElement('button'))
   }
   
-  buttons.forEach(button => {
-    let top = Math.floor(Math.random())
+ 
 
-    button.cssText = `
-    position: absolute;
-
-    `
-  })
+ randomButtons.forEach((button) => {
+   console.log(button)
+    let top = getRandomNumber(0, winHeight)
+    let left = getRandomNumber(0, winWidth)
+  button.style.height = '70px'
+  button.style.width = '50px'
+    button.style.position = 'absolute';
+    button.style.top = top +'px';
+    button.style.left =  left +'px';
+    button.style.backgroundColor = 'red';
+    document.body.appendChild(button)
+ })
+  console.log(randomButtons)
 }
+
+function getRandomNumber(min, max) { 
+    return Math.random() * (max - min) + min;
+  }
 </script>
 
 </html> 
