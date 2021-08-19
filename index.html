@@ -155,24 +155,36 @@ function createButtons(){
     let height = getRandomNumber(5, 200)
   let width = getRandomNumber(10, 200)
   let borderRadius = getRandomNumber(0, 50)
+  let bgColor = random_bg_color()
 
+ button.style.background = `${bgColor}`
   button.style.borderRadius = borderRadius + 'px'
   button.style.height = height + 'px'
   button.style.width = width + 'px'
     button.style.position = 'absolute';
     button.style.top = top +'px';
     button.style.left =  left +'px';
-    button.style.backgroundColor = 'red';
     document.body.appendChild(button)
  })
   
   randomButtons = []
   console.log(randomButtons)
+  console.log(random_bg_color())
 }
 
 function getRandomNumber(min, max) { 
     return Math.random() * (max - min) + min;
   }
+  function random_bg_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+ console.log(bgColor);
+ return bgColor
+    
+    }
+
 </script>
 
 </html> 
