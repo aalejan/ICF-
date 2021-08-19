@@ -184,12 +184,13 @@ function createButtons(){
 
   button.addEventListener('mouseenter', (e) =>{
     let bgColor = random_bg_color()
+    let deg = getRandomNumber(20, 1000)
 
-
+    e.target.style.transform = `rotate(${deg}deg)`
     e.target.style.background = `${bgColor}`
     e.target.style.transition = `all 1s`
   } )
-
+button.style.border = 'none'
  button.style.background = `${bgColor}`
   button.style.borderRadius = borderRadius + 'px'
   button.style.height = height + 'px'
@@ -202,9 +203,7 @@ function createButtons(){
  
 }
 
-function hover(e){
-  
-}
+
 
 function getRandomNumber(min, max) { 
   //function that randomly generates a number between the min and max that is passed in
