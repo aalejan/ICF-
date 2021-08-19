@@ -162,15 +162,11 @@ const buttonGenerator = document.querySelector('[data-button-generator]')
 var winWidth = window.innerWidth;
 var winHeight = window.innerHeight;
 
-//
 buttonGenerator.addEventListener('click', createButtons)
-
 
 function createButtons(){
 //Function that creates four buttons and randomly generates certain css style properties unique to each button
-
   let randomButtons = []
-
   //creates four button elements and pushes them into an array
   for(let i = 0; i <= 3; i++){
     randomButtons.push(document.createElement('button'))
@@ -186,6 +182,11 @@ function createButtons(){
   let borderRadius = getRandomNumber(0, 50)
   let bgColor = random_bg_color()
 
+  button.addEventListener('mouseenter', (e) =>{
+    let bgColor = random_bg_color()
+    e.target.style.background = `${bgColor}`
+  } )
+
  button.style.background = `${bgColor}`
   button.style.borderRadius = borderRadius + 'px'
   button.style.height = height + 'px'
@@ -196,6 +197,10 @@ function createButtons(){
     document.body.appendChild(button)
  })
  
+}
+
+function hover(e){
+  
 }
 
 function getRandomNumber(min, max) { 
