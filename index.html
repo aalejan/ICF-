@@ -47,7 +47,7 @@
 <hr>
 
 <h1>#2</h1>
-<input type="text"><button type="button">Validate</button>
+<input data-validate-input type="text"><button type="button">Validate</button>
 
 <hr>
 
@@ -104,6 +104,10 @@ function copy(input1, input2, columnInputs){
   input2.value = ''
   console.log(columnInputs)
 }
+//////////////////////////////////////////////////////////////////////////////////
+//TASK 2 Create a feature that displays an error message if the input is not a number when the validate button is clicked.
+const inputValidate = document.querySelector('[data-validate-input]')
+
 
 </script>
 
