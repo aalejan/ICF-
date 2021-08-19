@@ -52,7 +52,7 @@
 <hr>
 
 <h1>#3</h1>
-<input data-checkbox type="checkbox"><input data-checkbox-text type="text">
+<input data-checkbox type="checkbox"><input  data-checkbox-text type="text">
 
 <hr>
 
@@ -123,9 +123,18 @@ function validate(){
 }
 //////////////////////////////////////////////////////////////////////////////
 //TASK 3 Create a feature that checks the checkbox when anything is entered in the text box.
-const checkboxText = document.querySelector('[data-checkbox-tex]')
+const checkboxText = document.querySelector('[data-checkbox-text]')
 const checkbox = document.querySelector('[data-checkbox]')
 
+checkboxText.addEventListener('change', checkCompleted)
+
+function checkCompleted(){
+
+  if(!checkbox.checked){
+    return checkbox.checked = true;
+  }else return checkbox.checked = false;
+  
+}
 
 </script>
 
