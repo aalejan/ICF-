@@ -47,7 +47,7 @@
 <hr>
 
 <h1>#2</h1>
-<input data-validate-input type="text"><button type="button">Validate</button>
+<input data-validate-input type="text"><button data-validate-button type="button">Validate</button>
 
 <hr>
 
@@ -107,7 +107,27 @@ function copy(input1, input2, columnInputs){
 //////////////////////////////////////////////////////////////////////////////////
 //TASK 2 Create a feature that displays an error message if the input is not a number when the validate button is clicked.
 const inputValidate = document.querySelector('[data-validate-input]')
+const validateBtn = document.querySelector('[data-validate-button]')
+ let errorMessage = document.createElement('div')
+  validateBtn.after(errorMessage)
+validateBtn.addEventListener('click', () => {validate()})
 
+function validate(){
+   
+
+  const input = inputValidate.value;
+ 
+  
+  if(!input) {
+   
+     return errorMessage.innerText = 'Please enter an input'  
+    }
+  
+  if(isNaN(input)){
+    return errorMessage.innerText = 'The input must be a number'
+  }else return errorMessage.innerText = 'Input has been validated'
+  
+}
 
 </script>
 
