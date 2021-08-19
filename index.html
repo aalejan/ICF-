@@ -162,7 +162,10 @@ const buttonGenerator = document.querySelector('[data-button-generator]')
 var winWidth = window.innerWidth;
 var winHeight = window.innerHeight;
 
+buttonGenerator.style.position = 'absolute'
+buttonGenerator.style.zIndex = '99999999999'
 buttonGenerator.addEventListener('click', createButtons)
+
 
 function createButtons(){
 //Function that creates four buttons and randomly generates certain css style properties unique to each button
@@ -185,10 +188,12 @@ function createButtons(){
   button.addEventListener('mouseenter', (e) =>{
     let bgColor = random_bg_color()
     let deg = getRandomNumber(20, 1000)
+    let scale = getRandomNumber(1, 2)
 
-    e.target.style.transform = `rotate(${deg}deg)`
+    e.target.style.transform = `r`
     e.target.style.background = `${bgColor}`
-    e.target.style.transition = `all 1s`
+    e.target.style.transition = `all 1s ease-in-out`
+    e.target.style.transform = `scale(${scale}) rotate(${deg}deg)`
   } )
 button.style.border = 'none'
  button.style.background = `${bgColor}`
