@@ -184,7 +184,10 @@ function createButtons(){
 
   button.addEventListener('mouseenter', (e) =>{
     let bgColor = random_bg_color()
+
+
     e.target.style.background = `${bgColor}`
+    e.target.style.transition = `all 1s`
   } )
 
  button.style.background = `${bgColor}`
