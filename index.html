@@ -52,7 +52,7 @@
 <hr>
 
 <h1>#3</h1>
-<input type="checkbox"><input type="text">
+<input data-checkbox type="checkbox"><input data-checkbox-text type="text">
 
 <hr>
 
@@ -73,7 +73,6 @@ const input1a = document.querySelector('[data-input1a]')
 const input1b = document.querySelector('[data-input1b]')
 const input2a = document.querySelector('[data-input2a]')
 const input2b = document.querySelector('[data-input2b]')
-
 let column1Inputs = []
 let column2Inputs = []
 
@@ -108,26 +107,25 @@ function copy(input1, input2, columnInputs){
 //TASK 2 Create a feature that displays an error message if the input is not a number when the validate button is clicked.
 const inputValidate = document.querySelector('[data-validate-input]')
 const validateBtn = document.querySelector('[data-validate-button]')
- let errorMessage = document.createElement('div')
-  validateBtn.after(errorMessage)
+let errorMessage = document.createElement('div')
+validateBtn.after(errorMessage)
 validateBtn.addEventListener('click', () => {validate()})
 
 function validate(){
-   
-
   const input = inputValidate.value;
  
-  
   if(!input) {
-   
      return errorMessage.innerText = 'Please enter an input'  
     }
-  
   if(isNaN(input)){
     return errorMessage.innerText = 'The input must be a number'
   }else return errorMessage.innerText = 'Input has been validated'
-  
 }
+//////////////////////////////////////////////////////////////////////////////
+//TASK 3 Create a feature that checks the checkbox when anything is entered in the text box.
+const checkboxText = document.querySelector('[data-checkbox-tex]')
+const checkbox = document.querySelector('[data-checkbox]')
+
 
 </script>
 
