@@ -154,7 +154,9 @@ function createButtons(){
     let left = getRandomNumber(0, winWidth)
     let height = getRandomNumber(5, 200)
   let width = getRandomNumber(10, 200)
+  let borderRadius = getRandomNumber(0, 50)
 
+  button.style.borderRadius = borderRadius + 'px'
   button.style.height = height + 'px'
   button.style.width = width + 'px'
     button.style.position = 'absolute';
